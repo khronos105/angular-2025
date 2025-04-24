@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output, signal } from '@angular/core';
 import { Character } from '../../../interfaces/character.interface';
 
 @Component({
@@ -11,6 +11,7 @@ export class CharacterAddComponent {
   name = signal('')
   power = signal(0)
 
+  newCharacter = output<Character>()
 
   addCharacter()
   {
@@ -19,13 +20,12 @@ export class CharacterAddComponent {
     }
 
     const newCharacter: Character = {
-      id: 10000,
+      id: Math.floor(Math.random() * 1000),
       name: this.name(),
       power: this.power()
     }
 
-    console.log(newCharacter)
-
+    this.newCharacter.emit(newCharacter)
     this.resetFields()
   }
 

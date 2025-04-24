@@ -23,4 +23,9 @@ export class DragonballSuperPageComponent {
     },
   ]);
 
+
+  addCharacter(character: Character)
+  {
+    this.characters.update(list => [...list, character])
+  }
 }
