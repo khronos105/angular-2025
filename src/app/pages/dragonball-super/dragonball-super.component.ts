@@ -1,17 +1,13 @@
 import { Component, signal } from '@angular/core';
-
-interface Character {
-  id: number;
-  name: string;
-  power: number;
-}
+import { CharacterListComponent } from '../../components/dragonball/character-list/character-list.component';
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
-  selector: 'app-dragonball',
-  imports: [],
-  templateUrl: './dragonball.component.html'
+  selector: 'app-dragonball-super',
+  imports: [CharacterListComponent],
+  templateUrl: './dragonball-super.component.html'
 })
-export class DragonballComponent {
+export class DragonballSuperPageComponent {
   name = signal('')
   power = signal(0)
 
@@ -20,6 +16,11 @@ export class DragonballComponent {
       id:1,
       name: 'Goku',
       power: 1292
+    },
+    {
+      id:2,
+      name: 'Vegeta',
+      power: 3211
     },
   ]);
 

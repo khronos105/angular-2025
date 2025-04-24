@@ -1,0 +1,9 @@
+
+<ol>
+  @for(character of characters(); track character.id){
+      <li>
+          <span>{{ character.name }}</span>
+          <strong class="text-danger"> ({{ character.power }})</strong>
+      </li>
+  }
+</ol>
