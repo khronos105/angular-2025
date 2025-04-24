@@ -1,0 +1,22 @@
+
+<h3>Add: {{ name() }}</h3>
+<input
+  type="text"
+  class="form-control mb-2"
+  placeholder="Name"
+  [value]="name()"
+  (input)="name.set(txtName.value)"
+  #txtName
+>
+<input
+  type="number"
+  class="form-control mb-2"
+  placeholder="Poder"
+  [value]="power()"
+  (input)="power.set(+txtPower.value)"
+  #txtPower
+>
+<button
+  class="btn btn-primary"
+  (click)="addCharacter()"
+>Add</button>
